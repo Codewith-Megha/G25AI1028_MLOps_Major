@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mlops-major-deployment
+
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: mlops-major
+
+  template:
+    metadata:
+      labels:
+        app: mlops-major
+
+    spec:
+      containers:
+      - name: mlops-major
+
+        image: megha21pandey/g25ai1028-mlops-major:latest
+
+        ports:
+        - containerPort: 5000
