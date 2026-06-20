@@ -22,7 +22,9 @@ def home():
 
         img = img.resize((64, 64))
 
-        img_array = np.array(img)
+        img_array = np.array(img, dtype=np.float32)
+
+        img_array = img_array / 255.0
 
         img_array = img_array.flatten().reshape(1, -1)
 
@@ -38,3 +40,4 @@ if __name__ == "__main__":
         host="0.0.0.0",
         port=5000
     )
+
